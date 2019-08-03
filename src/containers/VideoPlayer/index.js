@@ -1,17 +1,12 @@
 import React, { useState } from "react";
+import ReactPlayer from "react-player";
 import Input from "../../components/Input";
-import Video from "../../components/Video";
 import IFrameSnippet from "../../components/IFrameSnippet";
 
-const src = [
-  {
-    src: "https://vjs.zencdn.net/v/oceans.mp4",
-    type: "video/mp4"
-  }
-];
+const src = "https://vjs.zencdn.net/v/oceans.mp4";
 
 const VideoPlayer = () => {
-  const [width, setWidth] = useState(900);
+  const [width, setWidth] = useState(800);
   const [height, setHeight] = useState(506);
   const setters = {
     setWidth,
@@ -29,9 +24,12 @@ const VideoPlayer = () => {
   };
   return (
     <React.Fragment>
+      <h3>Native Html Video Player Demo</h3>
       <div className="fields">
         <Input
-          className="input"
+          className="inputContainer"
+          labelClassName="wLabel"
+          inputClassName="wInput"
           label="Width"
           type="number"
           name="width"
@@ -39,30 +37,31 @@ const VideoPlayer = () => {
           onChange={changeHandler}
         />
         <Input
-          className="input"
+          className="inputContainer"
+          labelClassName="hLabel"
+          inputClassName="hInput"
           label="Height"
           type="number"
           name="height"
           value={height}
           onChange={changeHandler}
         />
-        <IFrameSnippet
-          src={src[0].src}
-          width={width}
-          height={height}
-          scrolling="no"
-          frameBorder="0"
-          allowFullScreen
-        />
       </div>
-      <Video
-        videoProps={{
-          style: { margin: " 10px auto" },
-          width,
-          height,
-          controls: true
-        }}
+      <IFrameSnippet
         src={src}
+        className="snippet"
+        width={width}
+        height={height}
+        scrolling="no"
+        frameBorder="0"
+        allowFullScreen
+      />
+      <ReactPlayer
+        url={src}
+        controls
+        width={width}
+        height={height}
+        style={{ margin: " 10px auto", border: "2px solid black", borderRadius: 5}}
       />
     </React.Fragment>
   );

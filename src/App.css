@@ -1,3 +1,41 @@
 .App {
   text-align: center;
 }
+
+.fields {
+  display: inline-block;
+  width: 486px;
+  height: 118px;
+}
+
+.inputContainer,
+.inputContainer input {
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.inputContainer input {
+  width: 200px;
+  height: 33px;
+}
+
+.hLabel {
+  padding-right: 44px;
+}
+
+.wLabel {
+  padding-right: 50px;
+}
+
+.snippet {
+  height: 47px;
+  background: #ffffff;
+  box-shadow: 0px 0px 12px 8px #b6b6b6 inset;
+  border-radius: 5px;
+  color: #666666;
+  font-size: 12px;
+  padding: 8px;
+  letter-spacing: 1px;
+  resize: none;
+  width: 400px;
+}

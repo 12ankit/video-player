@@ -7,12 +7,8 @@ const Input = ({
   className,
   ...inputProps
 }) => (
-  <div className={className} style={{ display: "inline-block", width: 300 }}>
-    <label
-      style={{ display: "block", paddingBottom: 10, fontSize: 14 }}
-      className={labelClassName}
-      htmlFor={inputProps.name}
-    >
+  <div className={className}>
+    <label className={labelClassName} htmlFor={inputProps.name}>
       {label}
     </label>
     <input id={inputProps.name} className={inputClassName} {...inputProps} />

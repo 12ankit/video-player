@@ -4,7 +4,7 @@
 
 .fields {
   display: inline-block;
-  width: 486px;
+  width: 404px;
   height: 118px;
 }
 
@@ -37,5 +37,5 @@
   padding: 8px;
   letter-spacing: 1px;
   resize: none;
-  width: 400px;
+  width: 377px;
 }
